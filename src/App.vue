@@ -9,11 +9,14 @@
                     <li class="nav-item" role="presentation"><router-link :to="{name: 'sobremi'}">sobre mí</router-link></li>
                     <li class="nav-item" role="presentation"><router-link :to="{name: 'contacto'}">contacto</router-link></li>
                     <li class="nav-item" role="presentation"><router-link to="/post/1">último post</router-link></li>
+                    <li class="nav-item" role="presentation"><router-link to="/administrador">Administrador</router-link></li>
                 </ul>
         </div>
         </div>
     </nav>
+    <transition name="fade"> <!-- punto 4: transiciones -->
     <router-view></router-view>
+    </transition>
   </div>
   
 </template>
@@ -33,5 +36,12 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+/* punto 4: transiciones */
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0
 }
 </style>
