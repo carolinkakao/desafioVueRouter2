@@ -38,10 +38,15 @@ export default {
   margin-top: 60px;
 }
 /* punto 4: transiciones */
-.fade-enter-active, .fade-leave-active {
-  transition: opacity .5s
+.fade-enter-active{
+    animation: fadeIn ease 2s;
 }
-.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
-  opacity: 0
+@keyframes fadeIn {
+  0% {
+    opacity: 0%;
+  }
+  100% {
+    opacity: 100%;
+  }
 }
 </style>
